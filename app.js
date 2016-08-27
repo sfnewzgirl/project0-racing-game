@@ -4,9 +4,16 @@ var player2carImage = "http://rlv.zcache.com/1959_retro_black_cutout-r3a9a0c3f0e
 $(document).ready(function() {
 //all the code to manipulate the DOM
 //set up game board
-  new Game
 
+//$(".game-start").show();
 
+$(".game-start").on("click", function handleClick() {
+  var currentGame = new Game;
+  $(".game-start-button").hide();
+  $("#button-wrapper").append("<h2>Ready?</h2>");
+  $("#button-wrapper").append("<h2>Set...</h2>");
+  $("#button-wrapper").append("<h2>Go!!!</h2>");
+});
 
   $(" ").on("keypress", function() {
     //tap spacebar
@@ -40,8 +47,9 @@ function Game () {
   blackCar = new Car(player2carImage);
 }
 
-Game.prototype.raceClock = function () {
+//Game.prototype.raceClock = function () {
   //
-  $(".clock")
-}
+//  $(".clock")
+//}
+
  //winner logic function

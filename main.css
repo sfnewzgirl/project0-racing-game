@@ -17,6 +17,17 @@ p {
   text-align: center;
   margin: auto;
 }
+.game-start {
+  font-size: 1.5em;
+  height: 75px;
+  width: 200px;
+  border-radius: 30px;
+  border-width: 5px;
+  margin-top: 1em;
+  background-color: white;
+  color: black;
+  border-color: gray;
+}
 .clock {
   display: block;
   background-color: yellow;
@@ -51,4 +62,11 @@ span {
   margin-right: 6em;
   height: 200px;
   width: 200px;
+}
+footer {
+  clear: both;
+  display: block;
+  text-align: center;
+  background-color: white;
+  color: black;
 }
