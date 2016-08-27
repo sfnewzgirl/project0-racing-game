@@ -16,7 +16,9 @@ $(document).ready(function() {
   });
 
   //if keypress a = player1
+  //var key = a.which;
   //if keypress l = player2
+  //var key = l.which;
 
 });
 
@@ -29,7 +31,8 @@ function Car (carImage) {
 
 Car.prototype.increaseScore = function (num) {
   this.score += num;
-  console.log("moveForward");
+//  $(this).append(score);
+  console.log("increaseScore");
 }
 
 function Game () {
@@ -39,5 +42,6 @@ function Game () {
 
 Game.prototype.raceClock = function () {
   //
+  $(".clock")
 }
  //winner logic function

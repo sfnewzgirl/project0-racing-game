@@ -1,0 +1,54 @@
+body {
+  background-color: pink;
+  font-family: 'Poppins', sans-serif;
+}
+h1 {
+  text-align: center;
+  font-size: 4.5em;
+  margin: auto;
+}
+h2 {
+  text-align: center;
+  margin: auto;
+}
+p {
+  background-color: white;
+  font-size: 1.25em;
+  text-align: center;
+  margin: auto;
+}
+.clock {
+  display: block;
+  background-color: yellow;
+  margin-left: 30em;
+  margin-right: 30em;
+}
+ul {
+  padding: inherit;
+  /*-webkit-padding-start: 0px;*/
+}
+li {
+  font-size: 4em;
+  text-align: center;
+  display: inline;
+  list-style-type: none;
+}
+span {
+  color: red;
+}
+#player1 {
+  background-color: yellow;
+  display: inline-block;
+  float: left;
+  margin-left: 6em;
+  height: 200px;
+  width: 200px;
+}
+#player2 {
+  background-color: yellow;
+  display: inline-block;
+  float: right;
+  margin-right: 6em;
+  height: 200px;
+  width: 200px;
+}
