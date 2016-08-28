@@ -5,6 +5,7 @@ $(document).ready(function() {
   var currentGame = new Game;
   var allGamePrompts = $(".game-prompt");
   var currentGamePrompt = 0;
+  $("#end-of-game").hide();
 
   $(".game-start").on("click", function handleClick() {
     var gamePromptTimer;
@@ -38,10 +39,10 @@ $(document).ready(function() {
     };
 
     function countdown() {
-      //      $(".gamePromptTimer").show(allGamePrompts.length - 1);
       console.log("Time is up");
       window.clearInterval(raceTimer);
       window.clearInterval(secondsTimer);
+      $("#end-of-game").show();
       currentGame.declareWinner();
       $("sec").text("00");
     };
@@ -83,12 +84,16 @@ function Game () {
 Game.prototype.declareWinner = function () {
     if (this.cars[65].score > this.cars[76].score) {
       console.log("Player One, YOU WON!");
+      $("#winner-declaration").text("Player One, YOU WON!");
     }
     else if (this.cars[65].score < this.cars[76].score) {
       console.log("Player Two, YOU WON!");
+      $("#winner-declaration").text("Player Two, YOU WON!");
     }
     else {
       console.log("It was a tie!");
+      $("winner-declaration").text("It was a tie!");
     }
+
     //$(".game-start").show();
 };
