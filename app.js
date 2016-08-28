@@ -53,9 +53,9 @@ $(document).ready(function() {
   $(window).on("keyup", function handleKey() {
     car = currentGame.cars[event.which];
     if (car) {
-      car.increaseScore(1);
+      var carScore = car.increaseScore(1);
+      $("#player" + event.which + "Score").text(carScore);
     }
-//      car.text(this.score);
   });
 
 });
@@ -70,8 +70,8 @@ function Car (carImage, carName) {
 
 Car.prototype.increaseScore = function (num) {
   this.score += num;
-//  $(this).append(score);
   console.log("increaseScore", this);
+  return this.score;
 };
 
 function Game () {
