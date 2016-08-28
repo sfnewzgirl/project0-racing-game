@@ -22,22 +22,28 @@ $(document).ready(function() {
       });
     }
     gamePromptTimer = window.setInterval(changeGamePrompts, 1000);
-});
+  });
 
   function raceClock() {
-//    var time = (timer/1000);
     var raceTimer;
     $("#button-wrapper").hide();
 
     function countdown() {
       console.log("Time is up");
       window.clearInterval(raceTimer);
-      // Something goes here
     };
-
     raceTimer = window.setInterval(countdown, 30000);
   };
 //    $("#secs").innerHTML=time;
+
+  $(window).on("keydown", function handleKey() {
+    if (event.which == 65 ) {
+      console.log("a");
+    }
+    if (event.which == 76) {
+      console.log("l");
+    }
+  });
 
 //  $(" ").on("keypress", function() {
     //tap spacebar
@@ -48,8 +54,10 @@ $(document).ready(function() {
 
   //if keypress a = player1
   //var key = a.which;
+  //a is 65
   //if keypress l = player2
   //var key = l.which;
+  //l is 76
 
 });
 
@@ -57,6 +65,7 @@ $(document).ready(function() {
 function Car (carImage) {
   this.image = carImage;
   this.score = 0;
+  this.key = "a" || "l";
   console.log("car");
 };
 
@@ -67,8 +76,8 @@ Car.prototype.increaseScore = function (num) {
 };
 
 function Game () {
-  whiteCar = new Car(player1carImage);
-  blackCar = new Car(player2carImage);
+  whiteCar = new Car(player1carImage, 0, "a");
+  blackCar = new Car(player2carImage, 0, "l");
 };
 
 // Game.prototype.raceClock = function () {
