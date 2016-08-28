@@ -7,13 +7,13 @@ $(document).ready(function() {
   var currentGamePrompt = 0;
 
   $(".game-start").on("click", function handleClick() {
-
+    var gamePromptTimer;
     function changeGamePrompts () {
       $(allGamePrompts[currentGamePrompt]).fadeIn(100, function () {
-        if(currentGamePrompt == allGamePrompts.length - 1) {
-//          currentGamePrompt = 0;
+        console.log('changeGamePrompts() interval');
+        if (currentGamePrompt == allGamePrompts.length - 1) {
+            window.clearInterval(gamePromptTimer);
             raceClock();
-            
         }
         else {
           currentGamePrompt++;
@@ -21,9 +21,23 @@ $(document).ready(function() {
         $(allGamePrompts[currentGamePrompt]).fadeOut(100);
       });
     }
-    $(currentGamePrompt);
-    var gamePromptTimer = setInterval(changeGamePrompts, 1000);
+    gamePromptTimer = window.setInterval(changeGamePrompts, 1000);
 });
+
+  function raceClock() {
+//    var time = (timer/1000);
+    var raceTimer;
+    $("#button-wrapper").hide();
+
+    function countdown() {
+      console.log("Time is up");
+      window.clearInterval(raceTimer);
+      // Something goes here
+    };
+
+    raceTimer = window.setInterval(countdown, 30000);
+  };
+//    $("#secs").innerHTML=time;
 
 //  $(" ").on("keypress", function() {
     //tap spacebar
@@ -57,15 +71,14 @@ function Game () {
   blackCar = new Car(player2carImage);
 };
 
-Game.prototype.raceClock = function () {
-  window.setTimeout(countdown, 30000);
+// Game.prototype.raceClock = function () {
+// };
 
-  // function displayScore() {
-  //   if (whiteCar.score > blackCar.score) {
-  //     console.log("Player One, YOU WON!");
-  //   }
-  //   else {
-  //     console.log("Player Two, YOU WON!");
-  //   }
-  // };
-};
+// function displayScore() {
+//   if (whiteCar.score > blackCar.score) {
+//     console.log("Player One, YOU WON!");
+//   }
+//   else {
+//     console.log("Player Two, YOU WON!");
+//   }
+// };
