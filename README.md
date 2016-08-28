@@ -13,18 +13,16 @@ Create a racing game with two players who compete for the best score. The game i
 
 ## Code Examples
 
-I chose to use a ```raceClock``` as an exercise in using timing functions in JavaScript. I chose to set s predetermined length of time for each race then let each player earn a score based on their ```keypress```, which is turned into a score in the JavaScript.
+I chose to use a timing event as the basis for my game to get more experience with these in JavaScript. I chose to set a predetermined length of time for each race then let each player earn a score based on their ```keypress```, which is turned into a score in the JavaScript.
+
+The first challenge was creating a ready, set, go function so the players were ready for the clock to start instead of starting the clock immediately when the page loads.
 
 ```
 code
 
 ```
 
-text
-
-```
-code
-```
+Next game the timing event for the game length.
 
 ```
 code

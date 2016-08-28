@@ -7,12 +7,13 @@ $(document).ready(function() {
   var currentGamePrompt = 0;
 
   $(".game-start").on("click", function handleClick() {
+
     function changeGamePrompts () {
       $(allGamePrompts[currentGamePrompt]).fadeIn(100, function () {
         if(currentGamePrompt == allGamePrompts.length - 1) {
 //          currentGamePrompt = 0;
-            // raceClock();
-            window.setTimeout(countdown, 30000);
+            raceClock();
+            
         }
         else {
           currentGamePrompt++;
@@ -24,9 +25,6 @@ $(document).ready(function() {
     var gamePromptTimer = setInterval(changeGamePrompts, 1000);
 });
 
-  function countdown() {
-    
-  };
 //  $(" ").on("keypress", function() {
     //tap spacebar
 //    increaseScore(1)
