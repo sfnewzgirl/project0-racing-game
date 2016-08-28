@@ -29,6 +29,7 @@ $(document).ready(function() {
     $("#button-wrapper").hide();
 
     function countdown() {
+//      $(".game-prompt").append("<h2>Time Is Up!</h2>");
       console.log("Time is up");
       window.clearInterval(raceTimer);
     };
@@ -36,12 +37,10 @@ $(document).ready(function() {
   };
 //    $("#secs").innerHTML=time;
 
-  $(window).on("keydown", function handleKey() {
-    if (event.which == 65 ) {
-      console.log("a");
-    }
-    if (event.which == 76) {
-      console.log("l");
+  $(window).on("keyup", function handleKey() {
+    car = currentGame.cars[event.which];
+    if (car) {
+      car.increaseScore(1);
     }
   });
 
@@ -62,22 +61,24 @@ $(document).ready(function() {
 });
 
 //object constructors and prototypes
-function Car (carImage) {
+function Car (carImage, carName) {
+  this.name = carName;
   this.image = carImage;
   this.score = 0;
-  this.key = "a" || "l";
-  console.log("car");
+  console.log(this);
 };
 
 Car.prototype.increaseScore = function (num) {
   this.score += num;
 //  $(this).append(score);
-  console.log("increaseScore");
+  console.log("increaseScore", this);
 };
 
 function Game () {
-  whiteCar = new Car(player1carImage, 0, "a");
-  blackCar = new Car(player2carImage, 0, "l");
+  this.cars = {
+    65: new Car("A", player1carImage),
+    76: new Car("L", player2carImage)
+  };
 };
 
 // Game.prototype.raceClock = function () {

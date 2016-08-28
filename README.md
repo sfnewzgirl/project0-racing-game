@@ -43,6 +43,7 @@ Next game the timing event for the game length.
 ```
 code
 ```
+Originally I considered having a score increase exponentially as a player held down a key, but the scoring could be matched or equal if two players only hold down their key. So I opted for a single score and ```keyup```, so the score is logged when the key is released, again restricting any increase from a key being held down and a keyboard reading that repeatedly.
 ## Screenshots
 
 ![alt text](???.png)
