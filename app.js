@@ -7,11 +7,12 @@ $(document).ready(function() {
   var currentGamePrompt = 0;
 
   $(".game-start").on("click", function handleClick() {
-
     function changeGamePrompts () {
       $(allGamePrompts[currentGamePrompt]).fadeIn(100, function () {
         if(currentGamePrompt == allGamePrompts.length - 1) {
-          currentGamePrompt = 0;
+//          currentGamePrompt = 0;
+            // raceClock();
+            window.setTimeout(countdown, 30000);
         }
         else {
           currentGamePrompt++;
@@ -23,6 +24,9 @@ $(document).ready(function() {
     var gamePromptTimer = setInterval(changeGamePrompts, 1000);
 });
 
+  function countdown() {
+    
+  };
 //  $(" ").on("keypress", function() {
     //tap spacebar
 //    increaseScore(1)
@@ -55,9 +59,15 @@ function Game () {
   blackCar = new Car(player2carImage);
 };
 
-//Game.prototype.raceClock = function () {
-  //
-//  $(".clock")
-//}
+Game.prototype.raceClock = function () {
+  window.setTimeout(countdown, 30000);
 
- //winner logic function
+  // function displayScore() {
+  //   if (whiteCar.score > blackCar.score) {
+  //     console.log("Player One, YOU WON!");
+  //   }
+  //   else {
+  //     console.log("Player Two, YOU WON!");
+  //   }
+  // };
+};
