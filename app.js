@@ -13,6 +13,7 @@ $(document).ready(function() {
         console.log('changeGamePrompts() interval');
         if (currentGamePrompt == allGamePrompts.length - 2) {
             window.clearInterval(gamePromptTimer);
+            $("#button-wrapper").hide();
             raceClock();
         }
         else {
@@ -26,27 +27,34 @@ $(document).ready(function() {
 
   function raceClock() {
     var raceTimer;
-    $("#button-wrapper").hide();
-//    for (var i = 30000; i < raceTimer; i--) {
-//      var seconds = i/1000
-//      $("#sec").text(seconds);
-//    }
+    var secondsTimer;
+    var raceLength = 30000;
+    var secondsRemaining = raceLength/1000;
+
+    function secondsUpdate() {
+      console.log("secondsUpdate");
+      secondsRemaining--;
+      $("#sec").text(secondsRemaining);
+    };
+
     function countdown() {
       //      $(".gamePromptTimer").show(allGamePrompts.length - 1);
       console.log("Time is up");
       window.clearInterval(raceTimer);
-      declareWinner();
+      window.clearInterval(secondsTimer);
+      currentGame.declareWinner();
+      $("sec").text("00");
     };
-    raceTimer = window.setInterval(countdown, 30000);
+    raceTimer = window.setInterval(countdown, raceLength);
+    secondsTimer = window.setInterval(secondsUpdate, 1000);
   };
-//    $("#secs").innerHTML=time;
 
   $(window).on("keyup", function handleKey() {
     car = currentGame.cars[event.which];
     if (car) {
       car.increaseScore(1);
     }
-      car.text(this.score);
+//      car.text(this.score);
   });
 
 });
@@ -73,10 +81,10 @@ function Game () {
 };
 
 Game.prototype.declareWinner = function () {
-    if ($("65").score > $("76").score) {
+    if (this.cars[65].score > this.cars[76].score) {
       console.log("Player One, YOU WON!");
     }
-    if ($("65").score < $("76").score ) {
+    else if (this.cars[65].score < this.cars[76].score) {
       console.log("Player Two, YOU WON!");
     }
     else {
