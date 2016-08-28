@@ -31,9 +31,6 @@ p {
 .game-prompt {
   display: none;
 }
-/*.game-prompt:first-of-type{
-  display: block;
-}*/
 .clock {
   display: block;
   background-color: yellow;

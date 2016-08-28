@@ -11,7 +11,7 @@ $(document).ready(function() {
     function changeGamePrompts () {
       $(allGamePrompts[currentGamePrompt]).fadeIn(100, function () {
         console.log('changeGamePrompts() interval');
-        if (currentGamePrompt == allGamePrompts.length - 1) {
+        if (currentGamePrompt == allGamePrompts.length - 2) {
             window.clearInterval(gamePromptTimer);
             raceClock();
         }
@@ -27,11 +27,15 @@ $(document).ready(function() {
   function raceClock() {
     var raceTimer;
     $("#button-wrapper").hide();
-
+//    for (var i = 30000; i < raceTimer; i--) {
+//      var seconds = i/1000
+//      $("#sec").text(seconds);
+//    }
     function countdown() {
-//      $(".game-prompt").append("<h2>Time Is Up!</h2>");
+      //      $(".gamePromptTimer").show(allGamePrompts.length - 1);
       console.log("Time is up");
       window.clearInterval(raceTimer);
+      declareWinner();
     };
     raceTimer = window.setInterval(countdown, 30000);
   };
@@ -42,27 +46,14 @@ $(document).ready(function() {
     if (car) {
       car.increaseScore(1);
     }
+      car.text(this.score);
   });
-
-//  $(" ").on("keypress", function() {
-    //tap spacebar
-//    increaseScore(1)
-    //hold spacebar
-//    increaseScore(2)
-//  });
-
-  //if keypress a = player1
-  //var key = a.which;
-  //a is 65
-  //if keypress l = player2
-  //var key = l.which;
-  //l is 76
 
 });
 
 //object constructors and prototypes
 function Car (carImage, carName) {
-  this.name = carName;
+  this.identity = carName;
   this.image = carImage;
   this.score = 0;
   console.log(this);
@@ -76,19 +67,20 @@ Car.prototype.increaseScore = function (num) {
 
 function Game () {
   this.cars = {
-    65: new Car("A", player1carImage),
-    76: new Car("L", player2carImage)
+    65: new Car(player1carImage, "A"),
+    76: new Car(player2carImage, "L")
   };
 };
 
-// Game.prototype.raceClock = function () {
-// };
-
-// function displayScore() {
-//   if (whiteCar.score > blackCar.score) {
-//     console.log("Player One, YOU WON!");
-//   }
-//   else {
-//     console.log("Player Two, YOU WON!");
-//   }
-// };
+Game.prototype.declareWinner = function () {
+    if ($("65").score > $("76").score) {
+      console.log("Player One, YOU WON!");
+    }
+    if ($("65").score < $("76").score ) {
+      console.log("Player Two, YOU WON!");
+    }
+    else {
+      console.log("It was a tie!");
+    }
+    //$(".game-start").show();
+};
