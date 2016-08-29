@@ -79,6 +79,11 @@ Car.prototype.increaseScore = function (num) {
   return this.score;
 };
 
+Car.prototype.setScore = function (score) {
+  this.score = score;
+  return this.score;
+};
+
 function Game () {
   this.cars = {
     65: new Car(player1carImage, "A"),
@@ -99,6 +104,8 @@ Game.prototype.declareWinner = function () {
       console.log("It was a tie!");
       $("winner-declaration").text("It was a tie!");
     }
+    this.cars[65].setScore(0);
+    this.cars[76].setScore(0);
 };
 //
 // Game.prototype.resetGame = function () {
