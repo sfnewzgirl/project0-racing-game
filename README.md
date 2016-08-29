@@ -12,6 +12,11 @@ I chose to use a timing event as the basis for my game to get more experience wi
 
 I chose to work with object oriented JavaScript as a way to solidify this new concept and see how it can really work to my benefit as a developer for clearer, more concise and easy to read code. I wanted to learn about it practical applications and flexibility.
 
+![alt text](racetimewireframes.jpg)
+Wireframe of original plan and second pass
+![alt text](racetime2.0wireframe.jpg)
+Wirefram of 2.0 plan
+
 ## Links
 
 Live URL: https://webdevmisharacetimeracinggame.bitballoon.com
