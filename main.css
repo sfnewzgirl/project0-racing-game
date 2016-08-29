@@ -1,18 +1,24 @@
 body {
-  background-color: pink;
+  background-color: #fffefe;
   font-family: 'Baloo Tamma', cursive;
 }
 h1 {
+  background-color: #38b5c1;
+  color: #1c4454;
+  text-shadow: 3px 3px #fffefe;
   text-align: center;
-  font-size: 4.5em;
+  font-size: 5.5em;
+  padding: 0 auto;
   margin: auto;
 }
 h2 {
+  color: #1c4454;
   text-align: center;
   margin: auto;
 }
 p {
-  background-color: white;
+  background-color: #a7f6fb;
+  color: #1c4454;
   font-size: 1.25em;
   text-align: center;
   margin: auto;
@@ -24,16 +30,16 @@ p {
   border-radius: 30px;
   border-width: 5px;
   margin-top: 1em;
-  background-color: white;
-  color: black;
-  border-color: gray;
+  background-color: #a7f6fb;
+  color: #1c4454;
+  border-color: #1c4454;
 }
 .game-prompt {
   display: none;
 }
 .clock {
   display: block;
-  background-color: yellow;
+  background-color: #38b5c1;
   margin-left: 30em;
   margin-right: 30em;
 }
@@ -51,10 +57,10 @@ li {
   list-style-type: none;
 }
 span {
-  color: red;
+  color: #fffefe;
 }
 #player1 {
-  background-color: yellow;
+  background-color: #38b5c1;
   display: inline-block;
   float: left;
   margin-left: 6em;
@@ -62,7 +68,7 @@ span {
   width: 200px;
 }
 #player2 {
-  background-color: yellow;
+  background-color: #38b5c1;
   display: inline-block;
   float: right;
   margin-right: 6em;
@@ -73,6 +79,6 @@ footer {
   clear: both;
   display: block;
   text-align: center;
-  background-color: white;
-  color: black;
+  background-color: #1c4454;
+  color: #fffefe;
 }
