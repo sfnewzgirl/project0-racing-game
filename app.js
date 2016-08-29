@@ -43,6 +43,7 @@ $(document).ready(function() {
 
     function countdown() {
       console.log("Time is up");
+      $(window).off("keyup");
       window.clearInterval(raceTimer);
       window.clearInterval(secondsTimer);
       $("#end-of-game").show();
@@ -51,17 +52,18 @@ $(document).ready(function() {
       $("#button-wrapper").show();
       $("#sec").text("00");
     };
+
+    $(window).on("keyup", function handleKey() {
+      car = currentGame.cars[event.which];
+      if (car) {
+        var carScore = car.increaseScore(1);
+        $("#player" + event.which + "Score").text(carScore);
+      }
+    });
+
     raceTimer = window.setInterval(countdown, raceLength);
     secondsTimer = window.setInterval(secondsUpdate, 1000);
   };
-
-  $(window).on("keyup", function handleKey() {
-    car = currentGame.cars[event.which];
-    if (car) {
-      var carScore = car.increaseScore(1);
-      $("#player" + event.which + "Score").text(carScore);
-    }
-  });
 
 });
 
