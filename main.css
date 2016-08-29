@@ -43,12 +43,12 @@ p {
   margin-left: 30em;
   margin-right: 30em;
 }
-#end-of-game {
-
+#winner-declaration {
+  color: #1c4454;
+  font-size: 3em;
 }
 ul {
   padding: inherit;
-  /*-webkit-padding-start: 0px;*/
 }
 li {
   font-size: 4em;
@@ -57,14 +57,26 @@ li {
   list-style-type: none;
 }
 span {
-  color: #fffefe;
+  color: #e7377d;
+  font-size: 1.75em;
+}
+#cream-car {
+  float: left;
+  display: inline-block;
+  margin: 2em;
+}
+#teal-car {
+  float: left;
+  display: inline-block;
+  margin: 2em;
 }
 #player1 {
+  clear: both;
   background-color: #38b5c1;
   display: inline-block;
   float: left;
   margin-left: 6em;
-  height: 200px;
+  height: 300px;
   width: 200px;
 }
 #player2 {
@@ -72,13 +84,26 @@ span {
   display: inline-block;
   float: right;
   margin-right: 6em;
-  height: 200px;
+  height: 300px;
   width: 200px;
 }
-footer {
+#player65Score, #player76Score {
+  font-size: 4em;
+  color: #1c4454;
+  text-align: center;
+}
+.clearfix:after {
+ visibility: hidden;
+ display: block;
+ content: " ";
+ clear: both;
+ height: 0;
+ font-size: 0;
+}
+/*footer {
   clear: both;
-  display: block;
+  position: absolute;
   text-align: center;
   background-color: #1c4454;
   color: #fffefe;
-}
+}*/
