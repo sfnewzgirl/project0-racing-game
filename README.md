@@ -6,6 +6,12 @@ WDI 31
 
 Create a racing game with two players who compete for the best score. The game includes a set race time and each player must use a keystroke to increase their score during the set amount of race time.
 
+I set two main objectives for myself: use timing events and object oriented JavaScript.
+
+I chose to use a timing event as the basis for my game to get more experience with these in JavaScript. I set a predetermined length of time for each race then let each player earn a score based on their ```keyup```, which is translated into a score in the JavaScript.
+
+I chose to work with object oriented JavaScript as a way to solidify this new concept and see how it can really work to my benefit as a developer for clearer, more concise and easy to read code. I wanted to learn about it practical applications and flexibility.
+
 ## Links
 
 Live URL: https://webdevmisharacetimeracinggame.bitballoon.com
@@ -17,8 +23,6 @@ GitHub Repository: https://github.com/sfnewzgirl/project0-racing-game.git
 * JavaScript (jQuery)
 
 ## Code Examples
-
-I chose to use a timing event as the basis for my game to get more experience with these in JavaScript. I set a predetermined length of time for each race then let each player earn a score based on their ```keypress```, which is translated into a score in the JavaScript.
 
 The first challenge was creating a ready, set, go function so the players were ready for the clock to start. This prevents the clock from starting immediately upon page load. When the player clicks the ready button it launches the countdown - ready, set, go then starts the clock. I used ```fadeIn``` and ```fadeOut```, two methods I had not used yet and ```setInterval``` to set each to one second.
 
