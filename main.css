@@ -78,7 +78,7 @@ span {
   display: inline-block;
   float: left;
   margin-left: 6em;
-  height: 250px;
+  height: 450px;
   width: 200px;
 }
 #player2 {
@@ -86,7 +86,7 @@ span {
   display: inline-block;
   float: right;
   margin-right: 6em;
-  height: 250px;
+  height: 450px;
   width: 200px;
 }
 #player2 img {
@@ -97,18 +97,18 @@ span {
   color: #1c4454;
   text-align: center;
 }
-.clearfix:after {
+/*.clearfix:after {
  visibility: hidden;
  display: block;
  content: " ";
  clear: both;
  height: 0;
  font-size: 0;
-}
-/*footer {
+}*/
+footer {
   clear: both;
-  position: absolute;
+  display: block;
   text-align: center;
   background-color: #1c4454;
   color: #fffefe;
-}*/
+}

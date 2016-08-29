@@ -53,7 +53,7 @@ $(document).ready(function() {
       currentGame.declareWinner();
       $("#game-start-button").text("Play again?");
       $("#button-wrapper").show();
-      $("#sec").text("00");
+      $("#sec").text("0");
     };
 
     $(window).on("keyup", function handleKey() {
@@ -107,7 +107,7 @@ Game.prototype.declareWinner = function () {
     }
     else {
       console.log("It was a tie!");
-      $("winner-declaration").text("It was a tie!");
+      $("#winner-declaration").text("It was a tie!");
     }
     this.cars[65].setScore(0);
     this.cars[76].setScore(0);
