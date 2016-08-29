@@ -15,7 +15,7 @@ I chose to work with object oriented JavaScript as a way to solidify this new co
 ![alt text](racetimewireframes.jpg)
 Wireframe of original plan and second pass
 ![alt text](racetime2.0wireframe.jpg)
-Wirefram of 2.0 plan
+My next goal is to integrate a car track with the cars moving on it, here is the wireframe mock up of this 2.0 plan.
 
 ## Links
 
