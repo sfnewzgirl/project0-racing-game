@@ -3,27 +3,30 @@ var player2carImage = "http://rlv.zcache.com/1959_retro_black_cutout-r3a9a0c3f0e
 
 $(document).ready(function() {
   var currentGame = new Game;
-  var allGamePrompts = $(".game-prompt");
-  var currentGamePrompt = 0;
+  var allGamePrompts = ["Ready?", "Set...", "GO!"];
+  var currentGamePrompt;
   $("#end-of-game").hide();
 
   $(".game-start").on("click", function handleClick() {
     var gamePromptTimer;
     function changeGamePrompts () {
-      $(allGamePrompts[currentGamePrompt]).fadeIn(100, function () {
-        console.log('changeGamePrompts() interval');
-        if (currentGamePrompt == allGamePrompts.length - 2) {
-            window.clearInterval(gamePromptTimer);
-            $("#button-wrapper").hide();
-            raceClock();
-        }
-        else {
-          currentGamePrompt++;
-        }
-        $(allGamePrompts[currentGamePrompt]).fadeOut(100);
-      });
+      $(".game-prompt").fadeOut(100);
+      console.log('changeGamePrompts() interval');
+      if (currentGamePrompt == allGamePrompts.length) {
+        window.clearInterval(gamePromptTimer);
+        $("#button-wrapper").fadeOut(100);
+        $(".game-prompt").text("");
+        raceClock();
+      }
+      else {
+        $(".game-prompt").text(allGamePrompts[currentGamePrompt]);
+        currentGamePrompt++;
+      }
+      $(".game-prompt").fadeIn(100);
     }
+    currentGamePrompt = 0;
     gamePromptTimer = window.setInterval(changeGamePrompts, 1000);
+    $("#end-of-game").hide();
   });
 
   function raceClock() {
@@ -44,7 +47,9 @@ $(document).ready(function() {
       window.clearInterval(secondsTimer);
       $("#end-of-game").show();
       currentGame.declareWinner();
-      $("sec").text("00");
+      $("#game-start-button").text("Play again?");
+      $("#button-wrapper").show();
+      $("#sec").text("00");
     };
     raceTimer = window.setInterval(countdown, raceLength);
     secondsTimer = window.setInterval(secondsUpdate, 1000);
@@ -94,6 +99,8 @@ Game.prototype.declareWinner = function () {
       console.log("It was a tie!");
       $("winner-declaration").text("It was a tie!");
     }
-
-    //$(".game-start").show();
 };
+//
+// Game.prototype.resetGame = function () {
+//   set score = 0;
+// }
