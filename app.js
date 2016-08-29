@@ -12,7 +12,7 @@ $(document).ready(function() {
     var gamePromptTimer;
     function changeGamePrompts () {
       $(".game-prompt").fadeOut(100);
-      console.log('changeGamePrompts() interval');
+//      console.log('changeGamePrompts() interval');
       if (currentGamePrompt == allGamePrompts.length) {
         window.clearInterval(gamePromptTimer);
         $("#button-wrapper").fadeOut(100);
@@ -38,14 +38,14 @@ $(document).ready(function() {
     var secondsRemaining = raceLength/1000;
 
     function secondsUpdate() {
-      console.log("secondsUpdate");
+//      console.log("secondsUpdate");
       secondsRemaining--;
       $("#sec").text(secondsRemaining);
     };
 
 //when the clock ends: checks for winner, starts some resets
     function countdown() {
-      console.log("Time is up");
+//      console.log("Time is up");
       $(window).off("keyup");
       window.clearInterval(raceTimer);
       window.clearInterval(secondsTimer);
@@ -75,12 +75,12 @@ function Car (carImage, carName) {
   this.identity = carName;
   this.image = carImage;
   this.score = 0;
-  console.log(this);
+//  console.log(this);
 };
 
 Car.prototype.increaseScore = function (num) {
   this.score += num;
-  console.log("increaseScore", this);
+//  console.log("increaseScore", this);
   return this.score;
 };
 
@@ -98,15 +98,15 @@ function Game () {
 
 Game.prototype.declareWinner = function () {
     if (this.cars[65].score > this.cars[76].score) {
-      console.log("Player One, YOU WON!");
+//      console.log("Player One, YOU WON!");
       $("#winner-declaration").text("Player One, YOU WON!");
     }
     else if (this.cars[65].score < this.cars[76].score) {
-      console.log("Player Two, YOU WON!");
+//      console.log("Player Two, YOU WON!");
       $("#winner-declaration").text("Player Two, YOU WON!");
     }
     else {
-      console.log("It was a tie!");
+//      console.log("It was a tie!");
       $("#winner-declaration").text("It was a tie!");
     }
     this.cars[65].setScore(0);
