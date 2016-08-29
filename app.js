@@ -7,6 +7,7 @@ $(document).ready(function() {
   var currentGamePrompt;
   $("#end-of-game").hide();
 
+//game start prompt: counts down with ready, set go
   $(".game-start").on("click", function handleClick() {
     var gamePromptTimer;
     function changeGamePrompts () {
@@ -29,6 +30,7 @@ $(document).ready(function() {
     $("#end-of-game").hide();
   });
 
+//while the clock is running: logs keyup and counts player score
   function raceClock() {
     var raceTimer;
     var secondsTimer;
@@ -41,6 +43,7 @@ $(document).ready(function() {
       $("#sec").text(secondsRemaining);
     };
 
+//when the clock ends: checks for winner, starts some resets
     function countdown() {
       console.log("Time is up");
       $(window).off("keyup");
@@ -109,7 +112,3 @@ Game.prototype.declareWinner = function () {
     this.cars[65].setScore(0);
     this.cars[76].setScore(0);
 };
-//
-// Game.prototype.resetGame = function () {
-//   set score = 0;
-// }
