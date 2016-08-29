@@ -60,7 +60,7 @@ span {
   color: #e7377d;
   font-size: 1.75em;
 }
-#cream-car {
+/*#cream-car {
   float: left;
   display: block;
   width: 50%;
@@ -72,7 +72,7 @@ span {
 }
 .clearfix {
   clear: both;
-}
+}*/
 #player1 {
   background-color: #38b5c1;
   display: inline-block;
@@ -88,6 +88,9 @@ span {
   margin-right: 6em;
   height: 250px;
   width: 200px;
+}
+#player2 img {
+  direction: rtl;
 }
 #player65Score, #player76Score {
   font-size: 4em;
