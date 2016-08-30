@@ -24,6 +24,7 @@ p {
   margin: auto;
 }
 #race-track {
+  background-color: #a7f6fb;
   border: 2px solid #1c4454;
   height: 200px;
   width: 1207px;
@@ -78,7 +79,7 @@ span {
   display: inline-block;
   float: left;
   margin-left: 6em;
-  height: 450px;
+  height: 250px;
   width: 200px;
 }
 #player2 {
@@ -86,7 +87,7 @@ span {
   display: inline-block;
   float: right;
   margin-right: 6em;
-  height: 450px;
+  height: 250px;
   width: 200px;
 }
 #player2 img {
