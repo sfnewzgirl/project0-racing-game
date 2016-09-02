@@ -23,6 +23,23 @@ p {
   text-align: center;
   margin: auto;
 }
+#race-track {
+  position: relative;
+  background-color: #a7f6fb;
+  border: 2px solid #1c4454;
+  height: 200px;
+  width: 1207px;
+}
+#cream-trackCar {
+  /*position: absolute;
+  background: url(cream-racetrackcar.jpg) no-repeat;*/
+  /*height: 175px;*/
+}
+#teal-trackCar {
+  /*position: absolute;
+  background: url(teal-trackCar.jpg) no-repeat;*/
+  /*height: 175px;*/
+}
 .game-start {
   font-size: 1.5em;
   height: 75px;
@@ -60,25 +77,12 @@ span {
   color: #e7377d;
   font-size: 1.75em;
 }
-/*#cream-car {
-  float: left;
-  display: block;
-  width: 50%;
-}
-#teal-car {
-  float: right;
-  display: block;
-  width: 50%;
-}
-.clearfix {
-  clear: both;
-}*/
 #player1 {
   background-color: #38b5c1;
   display: inline-block;
   float: left;
   margin-left: 6em;
-  height: 450px;
+  height: 250px;
   width: 200px;
 }
 #player2 {
@@ -86,7 +90,7 @@ span {
   display: inline-block;
   float: right;
   margin-right: 6em;
-  height: 450px;
+  height: 250px;
   width: 200px;
 }
 #player2 img {
@@ -97,14 +101,6 @@ span {
   color: #1c4454;
   text-align: center;
 }
-/*.clearfix:after {
- visibility: hidden;
- display: block;
- content: " ";
- clear: both;
- height: 0;
- font-size: 0;
-}*/
 footer {
   clear: both;
   display: block;

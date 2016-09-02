@@ -1,74 +1,71 @@
 var player1carImage = ;
 var player2carImage = ;
 
-$(document).ready(function() {
-  var currentGame = new Game;
-  var allGamePrompts = ["Ready?", "Set...", "GO!"];
-  var currentGamePrompt;
+function initApp() {
   $("#end-of-game").hide();
-
 //game start prompt: counts down with ready, set go
-  $(".game-start").on("click", function handleClick() {
-    var gamePromptTimer;
-    function changeGamePrompts () {
-      $(".game-prompt").fadeOut(100);
-      console.log('changeGamePrompts() interval');
-      if (currentGamePrompt == allGamePrompts.length) {
-        window.clearInterval(gamePromptTimer);
-        $("#button-wrapper").fadeOut(100);
-        $(".game-prompt").text("");
-        raceClock();
-      }
-      else {
-        $(".game-prompt").text(allGamePrompts[currentGamePrompt]);
-        currentGamePrompt++;
-      }
-      $(".game-prompt").fadeIn(100);
-    }
-    currentGamePrompt = 0;
-    gamePromptTimer = window.setInterval(changeGamePrompts, 1000);
-    $("#end-of-game").hide();
-  });
+  $(".game-start").on("click", handleClick);
+}
 
-//while the clock is running: logs keyup and counts player score
-  function raceClock() {
-    var raceTimer;
-    var secondsTimer;
-    var raceLength = 30000;
-    var secondsRemaining = raceLength/1000;
-
-    function secondsUpdate() {
-      console.log("secondsUpdate");
-      secondsRemaining--;
-      $("#sec").text(secondsRemaining);
-    };
+function secondsUpdate() {
+  console.log("secondsUpdate");
+  secondsRemaining--;
+  $("#sec").text(secondsRemaining);
+};
 
 //when the clock ends: checks for winner, starts some resets
-    function countdown() {
-      console.log("Time is up");
-      $(window).off("keyup");
-      window.clearInterval(raceTimer);
-      window.clearInterval(secondsTimer);
-      $("#end-of-game").show();
-      currentGame.declareWinner();
-      $("#game-start-button").text("Play again?");
-      $("#button-wrapper").show();
-      $("#sec").text("0");
-    };
+function countdown() {
+  console.log("Time is up");
+  $(window).off("keyup");
+  window.clearInterval(raceTimer);
+  window.clearInterval(secondsTimer);
+  $("#end-of-game").show();
+  currentGame.declareWinner();
+  $("#game-start-button").text("Play again?");
+  $("#button-wrapper").show();
+  $("#sec").text("00");
+};
 
-    $(window).on("keyup", function handleKey() {
-      car = currentGame.cars[event.which];
-      if (car) {
-        var carScore = car.increaseScore(1);
-        $("#player" + event.which + "Score").text(carScore);
-      }
-    });
+function handleClick() {
+  currentGamePrompt = 0;
+  gamePromptTimer = window.setInterval(changeGamePrompts, 1000);
+  $("#end-of-game").hide();
+}
 
-    raceTimer = window.setInterval(countdown, raceLength);
-    secondsTimer = window.setInterval(secondsUpdate, 1000);
-  };
+function changeGamePrompts () {
+  $(".game-prompt").fadeOut(100);
+  console.log('changeGamePrompts() interval');
+  if (currentGamePrompt == allGamePrompts.length) {
+    window.clearInterval(gamePromptTimer);
+    $("#button-wrapper").fadeOut(100);
+    $(".game-prompt").text("");
+    raceClock();
+  }
+  else {
+    $(".game-prompt").text(allGamePrompts[currentGamePrompt]);
+    currentGamePrompt++;
+  }
+  $(".game-prompt").fadeIn(100);
+}
 
-});
+//while the clock is running: logs keyup and counts player score
+function raceClock() {
+  var raceTimer;
+  var secondsTimer;
+  var raceLength = 30000;
+  secondsRemaining = raceLength/1000;
+
+  $(window).on("keyup", function handleKey() {
+    car = currentGame.cars[event.which];
+    if (car) {
+      var carScore = car.increaseScore(1);
+      $("#player" + event.which + "Score").text(carScore);
+    }
+  });
+
+  raceTimer = window.setInterval(countdown, raceLength);
+  secondsTimer = window.setInterval(secondsUpdate, 1000);
+};
 
 //object constructors and prototypes
 function Car (carImage, carName) {
@@ -107,7 +104,7 @@ Game.prototype.declareWinner = function () {
     }
     else {
       console.log("It was a tie!");
-      $("#winner-declaration").text("It was a tie!");
+      $("winner-declaration").text("It was a tie!");
     }
     this.cars[65].setScore(0);
     this.cars[76].setScore(0);
