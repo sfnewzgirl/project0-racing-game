@@ -12,6 +12,8 @@ I chose to use a timing event as the basis for my game to get more experience wi
 
 I chose to work with object oriented JavaScript as a way to solidify this new concept and see how it can really work to my benefit as a developer for clearer, more concise and easy to read code. I wanted to learn about it practical applications and flexibility.
 
+![alt text](imgs/race-time-screenshot.png)
+
 ## Links
 
 Live URL: https://webdevmisharacetimeracinggame.bitballoon.com
@@ -85,6 +87,6 @@ function raceClock() {
   });
 ```
 Originally I considered having a score increase exponentially as a player held down a key, but the scoring could be matched or equal if two players only hold down their key. So I opted for a single score and ```keyup```, so the score is logged when the key is released, again restricting any increase from a key being held down and a keyboard reading that repeatedly.
-## Screenshots
 
-![alt text](???.png)
+## Wireframes
+![alt text](imgs/wireframe.jpg)
