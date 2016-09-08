@@ -1,10 +1,12 @@
-var player1carImage = ;
-var player2carImage = ;
+var player1carImage = "imgs/cream-car.jpg";
+var player2carImage = "imgs/teal-car.jpg";
 
 function initApp() {
   $("#end-of-game").hide();
 //game start prompt: counts down with ready, set go
-  $(".game-start").on("click", handleClick);
+  $(".game-start").on("click", handleClick); {
+
+  }
 }
 
 function secondsUpdate() {
